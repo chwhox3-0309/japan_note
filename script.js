@@ -155,7 +155,8 @@ Wi-Fiはありますか？,ワイファイはありますか？,와이파이 있
                 item.classList.add('mastered');
             }
             // Display Japanese with furigana if available, otherwise just Japanese
-            const displayJapanese = word.japaneseReading && word.japaneseReading !== word.japanese 
+            const hasKanji = /[\u4e00-\u9faf]/.test(word.japanese); // Check if the Japanese text contains Kanji characters
+            const displayJapanese = (word.japaneseReading && word.japaneseReading !== word.japanese && hasKanji)
                                   ? `<ruby>${word.japanese}<rt>${word.japaneseReading}</rt></ruby>`
                                   : word.japanese;
 
