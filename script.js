@@ -122,7 +122,6 @@ Wi-Fiはありますか？,와이파이 있나요？
     let isPlayingAll = false;
     let currentPlayIndex = 0;
     let playbackRate = 1.0;
-    let currentAudio = null; // To manage the active audio element
 
     // --- Functions ---
 
@@ -171,49 +170,25 @@ Wi-Fiはありますか？,와이파이 있나요？
         progressCounter.textContent = `${masteredCount} / ${words.length}`;
     };
 
-    const stopSpeech = () => {
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.src = '';
-            currentAudio = null;
-        }
-    };
-
     const speak = (text, lang, callback) => {
-        stopSpeech(); // Stop any currently playing audio
-
-        const googleLang = lang.split('-')[0];
+        if (typeof SpeechSynthesisUtterance === "undefined" || typeof speechSynthesis === "undefined") {
+            alert("이 브라우저는 음성 합성을 지원하지 않습니다.");
+            return;
+        }
+        speechSynthesis.cancel();
         const processedText = text.replace(/~/g, '무엇무엇');
-        const encodedText = encodeURIComponent(processedText);
-        const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=${googleLang}&client=tw-ob`;
-        
-        const audio = new Audio(url);
-        currentAudio = audio;
-        audio.playbackRate = playbackRate;
-
-        audio.play().catch(e => {
-            console.error("Audio play failed:", e);
-            if (isPlayingAll) {
-                isPlayingAll = false;
-                playAllBtn.textContent = '연속 재생';
-            }
-        });
-        
-        audio.onended = () => {
-            currentAudio = null;
-            if (callback) {
-                callback();
-            }
-        };
-
-        audio.onerror = (e) => {
-            console.error("Audio playback error:", e);
-            currentAudio = null;
+        const utterance = new SpeechSynthesisUtterance(processedText);
+        utterance.lang = lang;
+        utterance.rate = playbackRate;
+        utterance.onend = () => callback && callback();
+        utterance.onerror = (event) => {
+            console.error("SpeechSynthesisUtterance.onerror", event);
             if (isPlayingAll) {
                 isPlayingAll = false;
                 playAllBtn.textContent = '연속 재생';
             }
         };
+        speechSynthesis.speak(utterance);
     };
 
     const playAll = () => {
@@ -326,7 +301,7 @@ Wi-Fiはありますか？,와이파이 있나요？
 
     resetBtn.addEventListener('click', () => {
         if (words.length > 0 && confirm('정말로 모든 단어를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) {
-            stopSpeech();
+            speechSynthesis.cancel();
             isPlayingAll = false;
             playAllBtn.textContent = '연속 재생';
             words = [];
@@ -352,7 +327,7 @@ Wi-Fiはありますか？,와이파이 있나요？
             playAll();
         } else {
             isPlayingAll = false;
-            stopSpeech();
+            speechSynthesis.cancel();
             playAllBtn.textContent = '연속 재생';
         }
     });
