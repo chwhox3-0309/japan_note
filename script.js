@@ -391,4 +391,18 @@ Wi-Fiはありますか？,와이파이 있나요？
 
     // --- Initial Load ---
     renderWords();
+
+    // --- Notice Modal Logic ---
+    const noticeModal = document.getElementById('notice-modal');
+    const confirmNoticeBtn = document.getElementById('confirm-notice-btn');
+    const hasSeenNotice = localStorage.getItem('hasSeenTTSNotice');
+
+    if (!hasSeenNotice) {
+        noticeModal.style.display = 'flex'; // Show the modal
+    }
+
+    confirmNoticeBtn.addEventListener('click', () => {
+        noticeModal.style.display = 'none'; // Hide the modal
+        localStorage.setItem('hasSeenTTSNotice', 'true'); // Remember that the user has seen it
+    });
 });
