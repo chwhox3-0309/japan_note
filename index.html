@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어 암기 카드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>일본어 암기 카드</h1>
+        
+        <div class="guide-box">
+            <h2>사용 방법 안내</h2>
+            <ul>
+                <li><strong>단어 추가:</strong> 상단 입력란에 일본어와 뜻을 입력하고 '추가' 버튼을 누르세요.</li>
+                <li><strong>음성 듣기:</strong> 각 단어의 🇯🇵(일본어), 🇰🇷(한국어) 버튼으로 발음을 들어보세요.</li>
+                <li><strong>연속 재생:</strong> '연속 재생' 버튼으로 전체 목록을 일본어-한국어 순서로 들을 수 있습니다.</li>
+                <li><strong>재생 속도:</strong> 1x ~ 3x 버튼으로 음성 재생 속도를 조절할 수 있습니다.</li>
+                <li><strong>단어장 관리:</strong> 추천 단어장을 불러오거나, 내 CSV 파일을 가져오고 내보낼 수 있습니다.</li>
+            </ul>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="japanese-input" placeholder="일본어">
+            <input type="text" id="meaning-input" placeholder="뜻">
+            <button id="add-btn" title="단어 추가">추가</button>
+        </div>
+
+        <div class="search-and-progress-container">
+            <input type="search" id="search-input" placeholder="🔍 단어 검색...">
+            <span id="progress-counter"></span>
+        </div>
+
+        <div class="playlist-container-wrapper">
+            <div id="playlist" class="playlist-container"></div>
+        </div>
+
+        <div class="main-controls">
+            <button id="play-all-btn">연속 재생</button>
+            <button id="reset-btn">전체 삭제</button>
+        </div>
+
+        <div class="speed-controls">
+            <button class="speed-btn active" data-speed="1">1x</button>
+            <button class="speed-btn" data-speed="1.5">1.5x</button>
+            <button class="speed-btn" data-speed="2">2x</button>
+            <button class="speed-btn" data-speed="3">3x</button>
+        </div>
+
+        <div class="management-section">
+            <h2>단어장 관리</h2>
+            <div class="preset-controls">
+                <p>추천 단어장 불러오기:</p>
+                <button class="preset-btn" data-preset="beginner">왕초보</button>
+                <button class="preset-btn" data-preset="n5">JLPT N5</button>
+                <button class="preset-btn" data-preset="travel">여행</button>
+            </div>
+            <div class="file-controls">
+                <label for="csv-import-input" class="import-label-btn">내 CSV 가져오기</label>
+                <input type="file" id="csv-import-input" accept=".csv" style="display: none;">
+                <button id="export-btn">내 단어장 내보내기</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

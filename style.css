@@ -1,0 +1,221 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.guide-box {
+    background-color: #e9f5ff;
+    border: 1px solid #bde0ff;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.guide-box h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: #0056b3;
+    text-align: center;
+}
+
+.guide-box ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.guide-box li {
+    margin-bottom: 0.4rem;
+}
+
+.guide-box li:last-child {
+    margin-bottom: 0;
+}
+
+.input-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#add-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#add-btn:hover { background-color: #0056b3; }
+
+.search-and-progress-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+#progress-counter {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.playlist-container-wrapper {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #fafafa;
+}
+
+.playlist-container { max-height: 35vh; min-height: 150px; overflow-y: auto; }
+
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.playlist-item.mastered span {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.playlist-item.hidden {
+    display: none;
+}
+
+.playlist-item:last-child { border-bottom: none; }
+.playlist-item span { flex-grow: 1; margin-right: 1rem; }
+.item-controls { display: flex; align-items: center; gap: 0.75rem; }
+
+.speak-btn, .delete-btn, .master-btn {
+    background: none; border: none; cursor: pointer; padding: 0;
+    font-size: 1.5rem; line-height: 1; transition: transform 0.2s, color 0.2s;
+}
+
+.master-btn { color: #ccc; }
+.playlist-item.mastered .master-btn { color: #28a745; }
+.master-btn:hover, .speak-btn:hover, .delete-btn:hover { transform: scale(1.2); }
+
+.delete-btn { color: #aaa; }
+.delete-btn:hover { color: #dc3545; }
+
+.main-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+.speed-controls { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+
+.speed-btn {
+    padding: 0.5rem; border: 1px solid #ddd; border-radius: 8px;
+    background-color: #f8f9fa; cursor: pointer; font-weight: bold;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.speed-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
+
+#play-all-btn, #reset-btn, .import-label-btn, #export-btn {
+    padding: 0.85rem; border: none; border-radius: 8px; cursor: pointer;
+    font-weight: bold; transition: background-color 0.2s; font-size: 1rem; text-align: center;
+}
+
+#play-all-btn { background-color: #28a745; color: white; }
+#play-all-btn:hover { background-color: #218838; }
+
+#reset-btn { background-color: #dc3545; color: white; }
+#reset-btn:hover { background-color: #c82333; }
+
+.management-section {
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+}
+
+.management-section h2 {
+    text-align: center; margin-top: 0; margin-bottom: 1rem; font-size: 1.2rem; color: #333;
+}
+
+.preset-controls {
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;
+}
+
+.preset-controls p { margin: 0; font-size: 0.9rem; color: #555; }
+
+.preset-btn {
+    padding: 0.5rem 1rem; border: 1px solid #6c757d; border-radius: 20px;
+    background-color: transparent; color: #6c757d; cursor: pointer; transition: all 0.2s;
+}
+
+.preset-btn:hover { background-color: #6c757d; color: white; }
+
+.file-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+.import-label-btn, #export-btn {
+    background-color: #6c757d; color: white;
+}
+
+.import-label-btn:hover, #export-btn:hover { background-color: #5a6268; }
+
+.playlist-container::-webkit-scrollbar { width: 8px; }
+.playlist-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 8px; }
+.playlist-container::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
+.playlist-container::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+@media (max-width: 600px) {
+    body { padding: 0.5rem; }
+    .container { padding: 1.5rem; }
+    h1 { font-size: 1.5rem; }
+    .input-container { flex-direction: column; }
+    .main-controls, .file-controls { grid-template-columns: 1fr; }
+    .preset-controls { flex-direction: column; align-items: stretch; }
+    .preset-controls p { text-align: center; margin-bottom: 0.5rem; }
+}
