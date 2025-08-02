@@ -1,106 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Preset Data ---
     const presetData = {
-        beginner: `Japanese,Meaning
-こんにちは,안녕하세요
-おはようございます,좋은 아침입니다
-こんばんは,좋은 저녁입니다
-さようなら,안녕히 가세요
-ありがとう,고맙습니다
-すみません,실례합니다 / 미안합니다
-はい,네 / 예
-いいえ,아니요
-いち,일 (1)
-に,이 (2)
-さん,삼 (3)
-し,사 (4)
-ご,오 (5)
-げつようび,월요일
-かようび,화요일
-すいようび,수요일
-もくようび,목요일
-きんようび,금요일
-どようび,토요일
-にちようび,일요일
-わたし,나 / 저
-あなた,당신
-かれ,그
-かのじょ,그녀
-これ,이것
-それ,그것
-あれ,저것`,
-        n5: `Japanese,Meaning
-私 (わたし),나, 저
-学校 (がっこう),학교
-先生 (せんせい),선생님
-学生 (がくせい),학생
-友達 (ともだち),친구
-本 (ほん),책
-食べる (たべる),먹다
-飲む (のむ),마시다
-見る (みる),보다
-聞く (きく),듣다
-行く (いく),가다
-来る (くる),오다
-大きい (おおきい),크다
-小さい (ちいさい),작다
-高い (たかい),비싸다, 높다
-安い (やすい),싸다
-新しい (あたらしい),새롭다
-古い (ふるい),낡다
-良い (よい),좋다
-悪い (わるい),나쁘다
-今日 (きょう),오늘
-明日 (あした),내일
-昨日 (きのう),어제
-今 (いま),지금
-朝 (あさ),아침
-昼 (ひる),점심, 낮
-夜 (よる),밤
-時間 (じかん),시간
-人 (ひと),사람
-男 (おとこ),남자
-女 (おんな),여자
-好き (すき),좋아함
-上手 (じょうず),잘함, 능숙함
-下手 (へた),서투름
-元気 (げんき),건강, 활기
-天気 (てんき),날씨
-雨 (あめ),비
-雪 (ゆき),눈
-水 (みず),물
-お茶 (おちゃ),차(마시는 것)
-ご飯 (ごはん),밥, 식사
-パン,빵
-肉 (にく),고기
-魚 (さかな),생선
-野菜 (やさい),채소
-果物 (くだもの),과일
-買う (かう),사다
-売る (うる),팔다
-話す (はなす),이야기하다
-書く (かく),쓰다`,
-        travel: `Japanese,Meaning
-これはいくらですか？,이거 얼마예요?
-メニューをください,메뉴판 주세요
-おすすめは何ですか？,추천 메뉴는 무엇인가요？
-お願いします,부탁합니다
-トイレはどこですか？,화장실은 어디인가요？
-駅はどこですか？,역은 어디인가요?
-チェックインをお願いします,체크인 부탁합니다
-チェックアウトをお願いします,체크아웃 부탁합니다
-もう一度お願いします,다시 한번 말씀해주세요
-ゆっくり話してください,천천히 말해주세요
-写真を撮ってもいいですか？,사진을 찍어도 될까요？
-勘定をお願いします,계산서 부탁합니다
-カードで払えますか？,카드로 계산할 수 있나요？
-領収書をください,영수증을 주세요
-助けてください,도와주세요
-Wi-Fiはありますか？,와이파이 있나요？
-パスワードを教えてください,비밀번호를 알려주세요
-これをください,이것을 주세요
-試着してもいいですか？,입어봐도 될까요？
-免税でお願いします,면세로 부탁합니다`
+        beginner: `Japanese,JapaneseReading,Meaning
+こんにちは,こんにちわ,안녕하세요
+おはようございます,おはようございます,좋은 아침입니다
+こんばんは,こんばんは,좋은 저녁입니다
+さようなら,さようなら,안녕히 가세요
+ありがとう,ありがとう,고맙습니다
+すみません,すみません,실례합니다 / 미안합니다
+はい,はい,네 / 예
+いいえ,いいえ,아니요
+いち,いち,일 (1)
+に,に,이 (2)
+さん,さん,삼 (3)
+し,し,사 (4)
+ご,ご,오 (5)
+げつようび,げつようび,월요일
+かようび,かようび,수요일
+すいようび,すいようび,수요일
+もくようび,もくようび,목요일
+きんようび,きんようび,금요일
+どようび,どようび,토요일
+にちようび,にちようび,일요일
+わたし,わたし,나 / 저
+あなた,あなた,당신
+かれ,かれ,그
+かのじょ,かのじょ,그녀
+これ,これ,이것
+それ,それ,그것
+あれ,あれ,저것`,
+        n5: `Japanese,JapaneseReading,Meaning
+私,わたし,나, 저
+学校,がっこう,학교
+先生,せんせい,선생님
+学生,がくせい,학생
+友達,ともだち,친구
+本,ほん,책
+食べる,たべる,먹다
+飲む,のむ,마시다
+見る,みる,보다
+聞く,きく,듣다
+行く,いく,가다
+来る,くる,오다
+大きい,おおきい,크다
+小さい,ちいさい,작다
+高い,たかい,비싸다, 높다
+安い,やすい,싸다
+新しい,あたらしい,새롭다
+古い,ふるい,낡다
+良い,よい,좋다
+悪い,わるい,나쁘다
+今日,きょう,오늘
+明日,あした,내일
+昨日,きのう,어제
+今,いま,지금
+朝,あさ,아침
+昼,ひる,점심, 낮
+夜,よる,밤
+時間,じかん,시간
+人,ひと,사람
+男,おとこ,남자
+女,おんな,여자
+好き,すき,좋아함
+上手,じょうず,잘함, 능숙함
+下手,へた,서투름
+元気,げんき,건강, 활기
+天気,てんき,날씨
+雨,あめ,비
+雪,ゆき,눈
+水,みず,물
+お茶,おちゃ,차(마시는 것)
+ご飯,ごはん,밥, 식사
+パン,パン,빵
+肉,にく,고기
+魚,さかな,생선
+野菜,やさい,채소
+果物,くだもの,과일
+買う,かう,사다
+売る,うる,팔다
+話す,はなす,이야기하다
+書く,かく,쓰다`,
+        travel: `Japanese,JapaneseReading,Meaning
+これはいくらですか？,これはいくらですか？,이거 얼마예요?
+メニューをください,メニューをください,메뉴판 주세요
+おすすめは何ですか？,おすすめはなんですか？,추천 메뉴는 무엇인가요？
+お願いします,おねがいします,부탁합니다
+トイレはどこですか？,トイレはどこですか？,화장실은 어디인가요？
+駅はどこですか？,えきはどこですか？,역은 어디인가요?
+チェックインをお願いします,チェックインをおねがいします,체크인 부탁합니다
+チェックアウトをお願いします,チェックアウトをおねがいします,체크아웃 부탁합니다
+もう一度お願いします,もういちどおねがいします,다시 한번 말씀해주세요
+ゆっくり話してください,ゆっくりはなしてください,천천히 말해주세요
+写真を撮ってもいいですか？,しゃしんをとってもいいですか？,사진을 찍어도 될까요？
+勘定をお願いします,かんじょうをおねがいします,계산서 부탁합니다
+カードで払えますか？,カードではらえますか？,카드로 계산할 수 있나요？
+領収書をください,りょうしゅうしょをください,영수증을 주세요
+助けてください,たすけてください,도와주세요
+Wi-Fiはありますか？,ワイファイはありますか？,와이파이 있나요？
+パスワードを教えてください,パスワードをおしえてください,비밀번호를 알려주세요
+これをください,これをください,이것을 주세요
+試着してもいいですか？,しちゃくしてもいいですか？,입어봐도 될까요？
+免税でお願いします,めんぜいでおねがいします,면세로 부탁합니다`
     };
 
     // --- Element Selections ---
@@ -154,11 +154,16 @@ Wi-Fiはありますか？,와이파이 있나요？
             if (word.mastered) {
                 item.classList.add('mastered');
             }
+            // Display Japanese with furigana if available, otherwise just Japanese
+            const displayJapanese = word.japaneseReading && word.japaneseReading !== word.japanese 
+                                  ? `<ruby>${word.japanese}<rt>${word.japaneseReading}</rt></ruby>`
+                                  : word.japanese;
+
             item.innerHTML = `
-                <span><strong>${word.japanese}</strong> - ${word.meaning}</span>
+                <span><strong>${displayJapanese}</strong> - ${word.meaning}</span>
                 <div class="item-controls">
                     <button class="master-btn" data-index="${originalIndex}" title="학습 완료 토글">✔️</button>
-                    <button class="speak-btn" data-lang="ja-JP" data-text="${word.japanese}" title="일본어 듣기">🇯🇵</button>
+                    <button class="speak-btn" data-lang="ja-JP" data-text="${word.japaneseReading || word.japanese}" title="일본어 듣기">🇯🇵</button>
                     <button class="speak-btn" data-lang="ko-KR" data-text="${word.meaning}" title="뜻 듣기">🇰🇷</button>
                     <button class="delete-btn" data-index="${originalIndex}" title="단어 삭제">🗑️</button>
                 </div>
@@ -199,7 +204,8 @@ Wi-Fiはありますか？,와이파이 있나요？
 
         if (currentPlayIndex < currentlyVisibleWords.length && isPlayingAll) {
             const currentWord = currentlyVisibleWords[currentPlayIndex];
-            speak(currentWord.japanese, 'ja-JP', () => {
+            // Use japaneseReading for speech if available, otherwise fallback to japanese
+            speak(currentWord.japaneseReading || currentWord.japanese, 'ja-JP', () => {
                 if (!isPlayingAll) return;
                 setTimeout(() => {
                     if (!isPlayingAll) return;
@@ -236,6 +242,7 @@ Wi-Fiはありますか？,와이파이 있나요？
         const header = rows.shift().toLowerCase().split(',');
 
         const japaneseIndex = header.indexOf('japanese');
+        const japaneseReadingIndex = header.indexOf('japanesereading'); // New index for reading
         const meaningIndex = header.indexOf('meaning');
         const masteredIndex = header.indexOf('mastered');
 
@@ -243,6 +250,7 @@ Wi-Fiはありますか？,와이파이 있나요？
             if (row.trim() === '') return;
             const columns = row.split(',');
             const japanese = (columns[japaneseIndex] || '').trim().replace(/"/g, '');
+            const japaneseReading = (columns[japaneseReadingIndex] || japanese).trim().replace(/"/g, ''); // Use japanese as fallback
             const meaning = (columns[meaningIndex] || '').trim().replace(/"/g, '');
             
             let mastered = false;
@@ -251,7 +259,7 @@ Wi-Fiはありますか？,와이파이 있나요？
             }
 
             if (japanese && meaning) {
-                newWords.push({ japanese, meaning, mastered });
+                newWords.push({ japanese, japaneseReading, meaning, mastered }); // Add japaneseReading
             }
         });
 
